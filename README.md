@@ -8,6 +8,12 @@ Un correo. Una llamada. Un mensaje. Un código. Un enlace. Un archivo. Un pedido
 
 El participante debe interpretar lo que ve y elegir cómo actuar.
 
+## ¿Por que es tan importante capacitarse?
+
+La capacitación en phishing es fundamental porque muchos ataques no explotan una falla técnica: explotan una decisión humana.
+Un correo, una llamada, un QR o un mensaje pueden parecer completamente normales. Por eso no alcanza con saber qué es el phishing: hay que entrenar cómo reconocer señales de riesgo y cómo actuar antes de hacer clic, entregar información o autorizar una operación.
+La mejor defensa es que el usuario sepa detenerse, verificar y decidir.
+
 ## Cómo funciona
 
 El participante ingresa con su **nombre y apellido** y comienza la evaluación.
@@ -56,7 +62,7 @@ Los datos quedan guardados en el navegador del equipo utilizado. Esta versión n
 
 El editor permite adjuntar una imagen JPG, PNG o WEBP.
 
-Esto permite crear ejercicios visuales utilizando, por ejemplo, capturas preparadas para una capacitación y luego preguntar qué señales debería analizar el participante.
+Esto posibilita crear ejercicios visuales utilizando, por ejemplo, capturas preparadas para una capacitación y luego preguntar qué señales debería analizar el participante.
 
 Las imágenes deben ser propias, ficticias o utilizadas con autorización. Evitá incorporar credenciales, datos personales o información sensible real.
 
