@@ -69,9 +69,14 @@ Las imágenes deben ser propias, ficticias o utilizadas con autorización. Evit�
 ## Uso en Windows
 
 1. Descargá el repositorio o el ZIP presionando Code / Download ZIP.
-2. Descomprimilo por completo.
-3. Abrí `INICIAR_LABORATORIO.bat`.
-4. También podés abrir directamente `index.html`.
+2. o HACE CLIC ACA: <p align="center">
+  <a href="https://github.com/eelciberseguridad/PHISHING-Training/archive/refs/heads/main.zip">
+    <img src="https://img.shields.io/badge/Descargar-Laboratorio%20de%20Phishing-00c2ff?style=for-the-badge&logo=github&logoColor=white" alt="Descargar Laboratorio de Phishing">
+  </a>
+</p>
+3. Descomprimilo por completo.
+4. Abrí `INICIAR_LABORATORIO.bat`.
+5. También podés abrir directamente `index.html`.
 
 ## Uso en Linux
 
