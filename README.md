@@ -2,7 +2,7 @@
 
 Un laboratorio interactivo para capacitar personal frente a situaciones de phishing, suplantación e ingeniería social.
 
-La idea no es preguntarle al participante si conoce una definición. La idea es ponerlo frente a una situación parecida a la que podría recibir en su trabajo o en su vida cotidiana y obligarlo a decidir.
+La idea es simple... Poner al participante frente a una situación parecida a la que podría recibir en su trabajo o en su vida cotidiana y obligarlo a decidir.
 
 Un correo. Una llamada. Un mensaje. Un código. Un enlace. Un archivo. Un pedido urgente.
 
@@ -11,8 +11,6 @@ El participante debe interpretar lo que ve y elegir cómo actuar.
 ## Cómo funciona
 
 El participante ingresa con su **nombre y apellido** y comienza la evaluación.
-
-No necesita contraseña.
 
 Las situaciones y las respuestas se presentan de forma aleatoria. Al finalizar obtiene su porcentaje, la cantidad de respuestas correctas y una devolución. También puede revisar cada situación para entender qué decisión tomó y cuál era la respuesta recomendada.
 
@@ -64,7 +62,7 @@ Las imágenes deben ser propias, ficticias o utilizadas con autorización. Evit�
 
 ## Uso en Windows
 
-1. Descargá el repositorio o el ZIP.
+1. Descargá el repositorio o el ZIP presionando Code / Download ZIP.
 2. Descomprimilo por completo.
 3. Abrí `INICIAR_LABORATORIO.bat`.
 4. También podés abrir directamente `index.html`.
@@ -74,24 +72,6 @@ Las imágenes deben ser propias, ficticias o utilizadas con autorización. Evit�
 1. Descargá y descomprimí el proyecto.
 2. Abrí `index.html` en el navegador.
 3. También podés ejecutar `INICIAR_LABORATORIO.sh`.
-
-## Diseño de las situaciones
-
-Las situaciones están redactadas como podrían aparecer en la vida real, sin palabras que adelanten que existe un ataque.
-
-Por ejemplo, no se utiliza:
-
-> “Un supuesto asesor bancario te llama…”
-
-La situación se presenta directamente:
-
-> “Te llama un asesor bancario…”
-
-La misma regla se aplica a correos, mensajes, soporte técnico, entregas, redes sociales, pagos y solicitudes laborales.
-
-Durante la evaluación tampoco se muestra la categoría técnica de la pregunta. El participante ve únicamente **“Situación”**. Así no recibe pistas como “Vishing”, “Banca”, “QR” o “Ingeniería social” antes de decidir.
-
-Las respuestas incorrectas también están redactadas para resultar plausibles. El objetivo es evitar que una opción correcta pueda descubrirse simplemente descartando alternativas absurdas.
 
 ## Alcance
 
