@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>EEL CIBERSEGURIDAD · Laboratorio de Phishing</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" id="brandHome" type="button" aria-label="Volver al inicio">
+        <span class="brand-mark">EEL</span>
+        <span><strong>EEL CIBERSEGURIDAD</strong><small>Capacitación interactiva</small></span>
+      </button>
+      <button class="btn btn-quiet hidden" id="logoutBtn" type="button">Salir</button>
+    </header>
+
+    <main>
+      <section id="viewHome" class="view">
+        <div class="hero">
+          <div>
+            <span class="eyebrow">CAPACITACIÓN INTERACTIVA</span>
+            <h1>¿Qué harías en esta situación?</h1>
+            <p id="homeDescription" class="lead">Situaciones habituales de trabajo y vida digital. Analizá cada caso y elegí cómo actuarías.</p>
+          </div>
+          <div class="home-actions">
+            <button class="choice-card" id="openParticipant" type="button">
+              <span class="choice-icon">01</span>
+              <span><strong>Participante</strong><small>Iniciar evaluación</small></span>
+              <span class="arrow">→</span>
+            </button>
+            <button class="choice-card" id="openAdmin" type="button">
+              <span class="choice-icon">02</span>
+              <span><strong>Administrador</strong><small>Gestionar laboratorio</small></span>
+              <span class="arrow">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="viewParticipantLogin" class="view hidden">
+        <div class="center-card card">
+          <span class="eyebrow">PARTICIPANTE</span>
+          <h2>Antes de comenzar</h2>
+          <p>Ingresá tu nombre y apellido. El resultado quedará asociado a esta evaluación en este equipo.</p>
+          <form id="participantLoginForm">
+            <label>Nombre y apellido
+              <input id="participantName" type="text" maxlength="80" autocomplete="name" required placeholder="Ej.: Juan Pérez">
+            </label>
+            <p class="form-error hidden" id="participantLoginError"></p>
+            <div class="button-row">
+              <button class="btn btn-secondary" type="button" data-home>Volver</button>
+              <button class="btn btn-primary" type="submit">Comenzar evaluación</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="viewQuiz" class="view hidden">
+        <div class="quiz-shell">
+          <div class="quiz-top">
+            <div>
+              <small id="quizUser"></small>
+              <strong id="quizCounter">Pregunta 1</strong>
+            </div>
+            <div class="progress"><span id="progressBar"></span></div>
+          </div>
+
+          <article class="card question-card">
+            <span class="category" id="questionCategory"></span>
+            <img id="questionImage" class="question-image hidden" alt="Imagen de la situación">
+            <p id="questionScenario" class="scenario"></p>
+            <h2 id="questionText"></h2>
+            <div id="answerList" class="answers"></div>
+            <div class="question-footer">
+              <span id="answerHint">Elegí una respuesta.</span>
+              <button class="btn btn-primary" id="nextQuestion" type="button" disabled>Siguiente</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="viewResult" class="view hidden">
+        <div class="result-card card">
+          <span class="eyebrow">RESULTADO</span>
+          <h2 id="resultGreeting">Evaluación finalizada</h2>
+          <div class="score" id="resultScore">0%</div>
+          <p id="resultMessage" class="result-message"></p>
+          <div class="result-stats">
+            <div><strong id="resultCorrect">0</strong><span>Correctas</span></div>
+            <div><strong id="resultWrong">0</strong><span>A revisar</span></div>
+            <div><strong id="resultTotal">0</strong><span>Total</span></div>
+          </div>
+          <div class="button-row centered">
+            <button class="btn btn-secondary" id="toggleReview" type="button">Revisar respuestas</button>
+            <button class="btn btn-primary" id="finishParticipant" type="button">Finalizar</button>
+          </div>
+          <div id="reviewList" class="review-list hidden"></div>
+        </div>
+      </section>
+
+      <section id="viewAdminLogin" class="view hidden">
+        <div class="center-card card">
+          <span class="eyebrow">ADMINISTRADOR</span>
+          <h2>Acceso al panel</h2>
+          <p>Ingresá la clave de administración.</p>
+          <form id="adminLoginForm">
+            <label>Clave
+              <div class="password-row">
+                <input id="adminPassword" type="password" autocomplete="off" required placeholder="Clave de administrador">
+                <button class="icon-btn" data-toggle-password="adminPassword" type="button" aria-label="Mostrar u ocultar contraseña">👁</button>
+              </div>
+            </label>
+            <p class="form-error hidden" id="adminLoginError"></p>
+            <div class="button-row">
+              <button class="btn btn-secondary" type="button" data-home>Volver</button>
+              <button class="btn btn-primary" type="submit">Ingresar</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="viewAdmin" class="view hidden">
+        <div class="admin-layout">
+          <aside class="admin-nav card">
+            <div class="admin-title"><small>Panel</small><strong>Administrador</strong></div>
+            <button class="nav-btn active" type="button" data-tab="questions">Preguntas</button>
+            <button class="nav-btn" type="button" data-tab="settings">Configuración</button>
+            <button class="nav-btn" type="button" data-tab="results">Resultados</button>
+          </aside>
+
+          <div class="admin-content">
+            <section class="admin-tab" id="tabQuestions">
+              <div class="section-head">
+                <div><h2>Preguntas</h2></div>
+                <button class="btn btn-primary" id="newQuestionBtn" type="button">+ Nueva pregunta</button>
+              </div>
+              <div class="toolbar card">
+                <input id="questionSearch" type="search" placeholder="Buscar pregunta o categoría">
+                <button class="btn btn-secondary" id="exportQuestionsBtn" type="button">Exportar</button>
+                <label class="btn btn-secondary file-button">Importar<input id="importQuestionsInput" type="file" accept="application/json,.json"></label>
+              </div>
+              <div class="table-card card">
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>Categoría</th><th>Pregunta</th><th>Imagen</th><th></th></tr></thead>
+                    <tbody id="questionsTable"></tbody>
+                  </table>
+                </div>
+                <div class="pager"><button class="btn btn-quiet" id="prevPage" type="button">← Anterior</button><span id="pageInfo"></span><button class="btn btn-quiet" id="nextPage" type="button">Siguiente →</button></div>
+              </div>
+            </section>
+
+            <section class="admin-tab hidden" id="tabSettings">
+              <div class="section-head"><div><span class="eyebrow">AJUSTES</span><h2>Configuración</h2></div></div>
+              <form id="settingsForm" class="settings-card card">
+                <label>Cantidad de preguntas por evaluación
+                  <input id="examLength" type="number" min="1" max="100" required>
+                </label>
+                <label>Porcentaje de aprobación
+                  <input id="passScore" type="number" min="0" max="100" required>
+                </label>
+                <label class="full">Descripción de la capacitación
+                  <textarea id="trainingDescription" maxlength="500" rows="4"></textarea>
+                </label>
+                <div class="button-row full end"><button class="btn btn-primary" type="submit">Guardar cambios</button></div>
+              </form>
+            </section>
+
+            <section class="admin-tab hidden" id="tabResults">
+              <div class="section-head">
+                <div><span class="eyebrow">HISTORIAL</span><h2>Resultados</h2></div>
+                <div class="button-row compact"><button class="btn btn-secondary" id="exportResultsBtn" type="button">Exportar CSV</button><button class="btn btn-danger" id="clearResultsBtn" type="button">Borrar resultados</button></div>
+              </div>
+              <div class="table-card card">
+                <div class="table-wrap">
+                  <table>
+                    <thead><tr><th>Fecha</th><th>Participante</th><th>Resultado</th><th>Correctas</th><th></th></tr></thead>
+                    <tbody id="resultsTable"></tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>Créditos: EEL CIBERSEGURIDAD · eelciberseguridad@gmail.com</footer>
+  </div>
+
+  <div class="modal hidden" id="questionModal" role="dialog" aria-modal="true">
+    <div class="modal-box card">
+      <div class="modal-head"><div><span class="eyebrow">EDITOR</span><h2 id="questionModalTitle">Nueva pregunta</h2></div><button class="close-btn" id="closeQuestionModal" type="button">×</button></div>
+      <form id="questionForm" class="editor-grid">
+        <input id="editId" type="hidden">
+        <label>Categoría<input id="editCategory" type="text" maxlength="60" required placeholder="Ej.: Correo electrónico"></label>
+        <label class="full">Situación<textarea id="editScenario" rows="3" required placeholder="Describí una situación concreta."></textarea></label>
+        <label class="full">Pregunta<textarea id="editQuestion" rows="2" required placeholder="¿Qué debería hacer el usuario?"></textarea></label>
+        <label class="full">Respuesta 1<input id="editAnswer0" type="text" required></label>
+        <label class="full">Respuesta 2<input id="editAnswer1" type="text" required></label>
+        <label class="full">Respuesta 3<input id="editAnswer2" type="text" required></label>
+        <label>Respuesta correcta<select id="editCorrect"><option value="0">Respuesta 1</option><option value="1">Respuesta 2</option><option value="2">Respuesta 3</option></select></label>
+        <label class="full">Explicación<textarea id="editExplanation" rows="3" required placeholder="Explicación que se mostrará en la revisión."></textarea></label>
+        <label class="full">Imagen opcional<input id="editImage" type="file" accept="image/png,image/jpeg,image/webp"></label>
+        <div id="imageEditorBox" class="image-editor full hidden"><img id="imagePreview" alt="Vista previa"><button class="btn btn-danger" id="removeImageBtn" type="button">Quitar imagen</button></div>
+        <p class="helper full">Para que el laboratorio siga siendo portable, usá imágenes JPG, PNG o WEBP livianas.</p>
+        <div class="button-row full end"><button class="btn btn-secondary" id="cancelQuestionBtn" type="button">Cancelar</button><button class="btn btn-primary" type="submit">Guardar pregunta</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="resultDetailModal" role="dialog" aria-modal="true">
+    <div class="modal-box card result-detail-box">
+      <div class="modal-head">
+        <div><span class="eyebrow">EVALUACIÓN GUARDADA</span><h2 id="resultDetailName">Resultado</h2></div>
+        <button class="close-btn" id="closeResultDetail" type="button">×</button>
+      </div>
+      <div id="resultDetailMeta" class="result-detail-meta"></div>
+      <div class="button-row end compact">
+        <button class="btn btn-secondary" id="exportOneResultBtn" type="button">Exportar evaluación</button>
+      </div>
+      <div id="resultDetailList" class="review-list"></div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="confirmModal" role="dialog" aria-modal="true">
+    <div class="confirm-box card">
+      <h2 id="confirmTitle">Confirmar</h2>
+      <p id="confirmText"></p>
+      <label id="confirmPasswordLabel" class="hidden">Clave de administrador<input id="confirmPassword" type="password" autocomplete="off"></label>
+      <p class="form-error hidden" id="confirmError"></p>
+      <div class="button-row end"><button class="btn btn-secondary" id="confirmCancel" type="button">Cancelar</button><button class="btn btn-danger" id="confirmAccept" type="button">Confirmar</button></div>
+    </div>
+  </div>
+
+  <div class="toast hidden" id="toast"></div>
+
+  <script src="js/questions.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

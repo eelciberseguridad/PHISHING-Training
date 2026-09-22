@@ -1,0 +1,62 @@
+EEL CIBERSEGURIDAD — LABORATORIO DE PHISHING
+
+CÓMO INICIARLO
+
+WINDOWS
+1. Descomprimir la carpeta completa.
+2. Hacer doble clic en INICIAR_LABORATORIO.bat.
+   También puede abrirse index.html directamente.
+
+LINUX
+1. Descomprimir la carpeta completa.
+2. Abrir index.html con el navegador o ejecutar INICIAR_LABORATORIO.sh.
+
+PARTICIPANTE
+1. Elegir Participante.
+2. Escribir nombre y apellido.
+3. Comenzar la evaluación.
+4. Responder una opción por situación.
+5. Al finalizar, revisar el resultado y las respuestas.
+
+El participante NO necesita contraseña.
+El nombre permite asociar el resultado con la persona indicada. En una capacitación supervisada,
+el responsable debe verificar presencialmente o por el procedimiento interno quién está realizando
+la evaluación. El nombre por sí solo no constituye una verificación técnica de identidad.
+
+
+CRITERIO DE EVALUACIÓN
+Las situaciones se muestran sin indicar de antemano si existe un ataque.
+Durante el examen no se muestra la categoría técnica de cada caso.
+Las tres respuestas se mezclan y están redactadas para que el participante tenga que decidir,
+no para que encuentre la opción correcta por descarte.
+
+ADMINISTRADOR
+Elegir Administrador e ingresar la clave:
+
+EELCIBERSEGURIDAD
+
+Desde el panel se pueden:
+- Crear, editar o eliminar preguntas.
+- Agregar una imagen a una pregunta.
+- Configurar la cantidad de preguntas por evaluación.
+- Definir el porcentaje de aprobación.
+- Consultar el historial.
+- Abrir el detalle completo de una evaluación.
+- Exportar resultados detallados a CSV.
+- Importar o exportar el banco de preguntas.
+- Borrar resultados.
+
+DATOS
+Las preguntas, configuración y resultados se guardan localmente en el navegador utilizado.
+Las evaluaciones nuevas conservan la situación, la pregunta, la respuesta elegida, la respuesta
+correcta y la explicación para su consulta posterior.
+
+Si se usa en varias computadoras, cada navegador mantiene su propio historial local.
+No existe sincronización entre equipos porque esta versión funciona sin servidor.
+
+IMPORTANTE
+No mover index.html fuera de la carpeta: necesita las carpetas css y js.
+
+CRÉDITOS
+EEL CIBERSEGURIDAD
+eelciberseguridad@gmail.com
