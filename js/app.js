@@ -14,7 +14,7 @@ var LEGACY_STORAGE = {
 var DEFAULT_CONFIG={
   examLength:20,
   passScore:70,
-  description:'Situaciones habituales de trabajo y vida digital. Analizá cada caso y elegí cómo actuarías.'
+  description:'¿Qué harías en cada situación?'
 };
 var ACCESS_HASH=0xceb76fe8;
 var questions=[];
